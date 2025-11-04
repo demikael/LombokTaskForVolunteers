@@ -1,31 +1,71 @@
-# Lombok Task for Volunteers
+# LombokTaskForVolunteers
 
-This project is based on **Lab 4, Task 2** and demonstrates the use of the **Lombok** library in Java to reduce boilerplate code in model classes.
+This project demonstrates how to use **Project Lombok** to simplify Java class creation by automatically generating common methods like constructors, getters, setters, `equals()`, `hashCode()`, and `toString()`.
+
+---
 
 ## Description
 
-The task involves modifying the previous `Car` class by:
+The program defines a **`CarWithLombok`** class using Lombok annotations such as:
 
-* Adding the **Lombok** library to the project in IntelliJ IDEA.
-* Removing all constructors, getters, setters, and other methods from the `Car` class.
-* Using Lombok annotations such as `@Data`, `@AllArgsConstructor`, and `@NoArgsConstructor` to automatically generate them.
-* Creating two `Car` objects in the main class and using the `equals()` and `hashCode()` methods to compare them.
+* `@Getter` and `@Setter` – automatically generate getter and setter methods
+* `@AllArgsConstructor` – generates a constructor with all class fields as parameters
+* `@EqualsAndHashCode` – creates `equals()` and `hashCode()` methods
+* `@ToString` – creates a readable `toString()` method
 
-The program should compile successfully and show that `equals()` returns **true**, and `hashCode()` returns the **same value**, even though the two objects are separate instances.
+The **`Main`** class demonstrates:
 
-## How to Run
+* Creating two `CarWithLombok` objects
+* Printing their details
+* Comparing them using `equals()`
+* Displaying their hash codes
 
-1. Make sure **Lombok** is installed and enabled in IntelliJ IDEA.
-2. Clone this repository:
+---
 
-   ```bash
-   git clone https://github.com/demikael/Lombok-Task-For-Volunteers.git
-   cd Lombok-Task-For-Volunteers
-   ```
-3. Build and run the project from IntelliJ IDEA or the terminal.
+## Example Output
 
-## Reference
+```
+CarWithLombok(model=GLE, brand=Mercedes, color=white, year=2020, price=350000, stock=5)
+CarWithLombok(model=GLC, brand=Mercedes, color=black, year=2023, price=200000, stock=3)
+white
+Equals: false
+HashCode car1: 207122457
+HashCode car2: 211024245
+```
 
-Learn more about Lombok here: [https://projectlombok.org/](https://projectlombok.org/)
+---
 
-Would you like me to include example code or console output (showing the `equals()` and `hashCode()` results) in the README?
+## Why Lombok Is Needed
+
+Without Lombok, you would have to manually write:
+
+* Constructors
+* Getter and setter methods
+* `equals()`, `hashCode()`, and `toString()` methods
+
+Lombok automatically generates these during compilation, **reducing boilerplate code** and improving readability.
+
+---
+
+## How to Set Up Lombok
+
+1. **Download Lombok:**
+   Visit [https://projectlombok.org/download](https://projectlombok.org/download) and download the latest `lombok.jar`.
+
+2. **Install Lombok in IntelliJ IDEA:**
+
+   * Run the downloaded `lombok.jar` file.
+   * Select your IntelliJ installation path and click **Install**.
+   * Restart IntelliJ after installation.
+
+3. **Add Lombok to Your Project:**
+
+   * Go to **File → Project Structure → Modules → Dependencies → + → JARs or directories**
+   * Add the downloaded `lombok.jar` file.
+
+4. **Enable Annotation Processing:**
+
+   * Go to **File → Settings → Build, Execution, Deployment → Compiler → Annotation Processors**
+   * Check **“Enable annotation processing”**.
+
+After this setup, Lombok annotations will work automatically during compilation.
