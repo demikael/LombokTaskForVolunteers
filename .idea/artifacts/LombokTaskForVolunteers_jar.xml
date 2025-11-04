@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LombokTaskForVolunteers:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/LombokTaskForVolunteers_jar</output-path>
+    <root id="archive" name="LombokTaskForVolunteers.jar">
+      <element id="module-output" name="LombokTaskForVolunteers" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lombok.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
