@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 @Getter
 @Setter
 @AllArgsConstructor
-@EqualsAndHashCode
+@EqualsAndHashCode(exclude = {"model", "color", "year", "price", "stock"})
 @lombok.ToString
 class CarWithLombok {
     private String model;
